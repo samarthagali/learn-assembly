@@ -7,10 +7,10 @@ section .text
     global _start
 _start:
     mov ebx,1
-    mov r9d,0
+    mov edi,0
     jmp lp
 lp:
-    cmp r9d,10
+    cmp edi,10
     jle lesseq
     mov eax,4
     mov ebx,1
@@ -26,5 +26,5 @@ lesseq:
     mov ecx,lop
     mov edx,llen
     int 0x80
-    inc r9d
+    inc edi
     jmp lp

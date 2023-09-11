@@ -9,10 +9,10 @@ section .text
     global _start
 _start:
     mov ecx,99
-    mov r8d,ecx
+    mov edi,ecx
     jmp compare
 compare:
-    mov ecx,r8d
+    mov ecx,edi
     cmp ecx,100
     jl less
     je equa
@@ -23,7 +23,7 @@ less:
     mov ecx,hello
     mov edx,hlen
     int 0x80
-    inc r8d
+    inc edi
     jmp compare
 equa:
     mov eax,4
@@ -31,7 +31,7 @@ equa:
     mov ecx,eq
     mov edx,eqlen
     int 0x80
-    inc r8d
+    inc edi
     jmp compare
 greater:
     mov eax,4
